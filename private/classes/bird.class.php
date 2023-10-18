@@ -56,6 +56,7 @@ class Bird {
 
  // ----- END OF ACTIVE RECORD CODE ------
 
+  public $id;
   public $common_name;
   public $habitat;
   public $food;

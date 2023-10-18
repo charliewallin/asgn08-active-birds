@@ -12,20 +12,16 @@
 
   // Find bird using ID
 
-  $bike = Bird::find_by_id($id);
+  $bird = Bird::find_by_id($id);
+  
 
 ?>
 
-<?php $page_title = 'Detail: ' . $bird->name(); ?>
+<?php $page_title = 'Detail: ' . $bird->common_name; ?>
 <?php include(SHARED_PATH . '/public_header.php'); ?>
 
-<div id="main">
+  <a href="birds.php">Back to Inventory</a>
 
-  <a href="bird.php">Back to Inventory</a>
-
-  <div id="page">
-
-    <div class="detail">
       <dl>
         <dt>ID</dt>
         <dd><?php echo h($bird->id); ?></dd>
@@ -44,16 +40,11 @@
       </dl>
       <dl>
         <dt>Conservation Level</dt>
-        <dd><?php echo h($bird->conservation_id); ?></dd>
+        <dd><?php echo h($bird->conservation()); ?></dd>
       </dl>
       <dl>
         <dt>Backyard Tips</dt>
         <dd><?php echo h($bird->backyard_tips); ?></dd>
       </dl>
-    </div>
-
-  </div>
-
-</div>
 
 <?php include(SHARED_PATH . '/public_footer.php'); ?>
